@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="./styles.css"></link>
-        <title>My Chart</title>
-    </head>
-    <body>
-        <div id="wrapper" class="wrapper">
-
-            <div id="tooltip" class="tooltip">
-                <div class="tooltip-1">
-                    <span id="value-1"></span>
-                </div>
+  <head>
+    <link rel="stylesheet" href="./styles.css"></link>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <title>Animal Rights Across the World</title>
+  </head>
+  <body>
+    <div class="viz">
+      <h1 class="main-title">Animal Rights Across the World</h1>
+      <div id="wrapper" class="wrapper">
+        <div id="tooltip" class="tooltip">
+            <div class="tooltip-country">
+                <span id="tooltip-circle" class="tooltip-circle">▮ </span><span id="tt-country-text"></span>
+                <p class="tooltip-country-support"><span id="tt-support-text"></span><br> for Declaration for Animal Welfare</p>
             </div>
-
+            <div class="tooltip-total-score">
+                Total Score: <span id="tt-total-text"></span>
+            </div>
+            <div class="tooltip-env-score">
+                Environmental Score: <span id="tt-env-text"></span>
+            </div>
         </div>
+      </div>
+    </div>
 
-        <script src="./d3.v5.js"></script>
-        <script src="./chart.js"></script>
-    </body>
-
+    <script src="./d3.v5.js"></script>
+    <script src="./chart.js"></script>
+  </body>
 </html>
