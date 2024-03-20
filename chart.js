@@ -17,7 +17,7 @@ async function drawScatter() {
   // Step 2: Dimensions
   let dimensions = {
     width: window.innerWidth * 0.75,
-    height: 500,
+    height: Math.max(window.innerWidth * 0.5, 500),
     margin: {
       top: 50,
       bottom: 60,
