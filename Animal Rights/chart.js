@@ -16,13 +16,13 @@ async function drawScatter() {
 
   // Step 2: Dimensions
   let dimensions = {
-    width: window.innerWidth * 0.9,
-    height: Math.max(window.innerWidth * 0.4, 500),
+    width: window.innerWidth * 0.75,
+    height: Math.max(window.innerWidth * 0.5, 500),
     margin: {
       top: 50,
       bottom: 60,
       left: 60,
-      right: window.innerWidth * 0.2,
+      right: 150,
     },
   };
 
@@ -81,7 +81,7 @@ async function drawScatter() {
     .attr("class", "dot")
     .attr("cx", (d) => xScale(xAccessor(d)))
     .attr("cy", (d) => yScale(yAccessor(d)))
-    .attr("r", window.innerWidth*0.003)
+    .attr("r", 5)
     .attr("fill", (d) => cScale(colorAccessor(d)))
     .attr("stroke", (d) => cScale(colorAccessor(d)));
 
@@ -128,7 +128,7 @@ async function drawScatter() {
       .attr("class", "dot-highlight")
       .attr("cx", xScale(xAccessor(datum)))
       .attr("cy", yScale(yAccessor(datum)))
-      .attr("r", window.innerWidth*0.005)
+      .attr("r", 8)
       .attr("fill", cScale(colorAccessor(datum)))
       .attr("stroke", cScale(colorAccessor(datum)));
 
@@ -136,7 +136,7 @@ async function drawScatter() {
       .style("opacity", 0.85)
       .style(
         "transform",
-        `translate(calc(-50% + ${x}px), calc(-100% + ${y - window.innerWidth*0.002}px))`
+        `translate(calc(-50% + ${x}px), calc(-100% + ${y}px))`
       );
 
     d3.select("#tt-country-text").text(datum["Country"]);
